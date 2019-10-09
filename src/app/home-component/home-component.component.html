@@ -1,0 +1,134 @@
+<div>
+  <!-- <h2> This is app comp</h2> -->
+    <section class="hero">
+        <header>
+            <div class="wrapper">
+                <a href="#"><img src="assets/img/logo.png" class="logo" alt="" titl="" /></a>
+                <a href="#" class="hamburger"></a>
+                <nav>
+                    <ul>
+                        <li><a >Home</a></li>
+                        <li><a [routerLink]="['/trendingProp']" routerLinkActive="active" >Trendng Properties</a></li>
+                        <li><a [routerLink]="['/about']" routerLinkActive="active">About</a></li>
+                        <li><a [routerLink]="['/contact']" routerLinkActive="active">Contact</a></li>
+                    </ul>
+                    <a class="login_btn" (click)="onRegister()">Login</a>
+                </nav>
+  
+            </div>
+  
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="button" style="color:white;
+                        background-color:steelblue;
+                        margin-top : 250px;
+                        margin-left:250px;
+                        margin-right:auto;
+            margin-bottom : auto;
+                        width:200px;
+                        height:40px;
+                        font-size: 16px;letter-spacing: 1px;"
+                        value="Buy"
+                        (click)="onBuy()"
+                       [ngStyle]="{backgroundColor : buy == true ? 'orangered' : 'steelblue'}" />
+                        </td>
+                        <td>
+                            <input type="button" style="color:white;
+                        background-color:steelblue;
+                        margin-top : 250px;
+                        margin-left: -400px;
+                        width:210px;
+                        height:40px;
+                        font-size: 16px;letter-spacing: 1px;" 
+                        value="Rent"
+                        (click) = "onRent()"
+                        [ngStyle]="{backgroundColor : rent == true ? 'orangered' : 'steelblue'}" />
+                        </td>
+                        <td>
+                            <input type="button" style="color:white;
+                        background-color:steelblue;
+                        margin-top : 250px;
+                        margin-left: -250px;
+                        width:200px;
+                        height:40px;
+                        font-size: 16px;letter-spacing: 1px;" ng-click="onSubmit()" value="Sell" />
+                        </td>
+                        <td>
+                            <input type="button" style="color:white;
+                        background-color:steelblue;
+                        margin-top : 250px;
+                        margin-left: -450px;
+                        width:200px;
+                        height:40px;
+                        font-size: 16px;letter-spacing: 1px;" value="Commercials" />
+                        </td>
+                    </tr>
+                    <tr class="wrapper">
+  
+                        <td>
+  
+                            <select style="color:white;
+                                    background-color:steelblue;
+                                    margin:250px;
+                                    margin-left:250px;
+                                    margin-right:350px;
+                                    margin-top:auto;
+                                    width:250px;
+                                    height:40px;
+                                    font-size :16px;letter-spacing : 1px;"
+                                    [(ngModel)]="PropertyType">
+                                <option value="" disabled selected>Select Property Type</option>
+                                <option value="Apartment"> Condo / Apartment </option>
+                                <option value="Individual"> Individual House </option>
+                                <option value="Office"> Office / Commercial Space </option>
+                            </select>
+                        </td>
+                        <td>
+                            <div>
+                                <input style="color:red;
+                                       font-size: 16px;
+                                       letter-spacing: 1px;
+                                       background-color:white; 
+                                       margin:250px; 
+                                       margin-right:auto; 
+                                       margin-left:-350px; 
+                                       margin-top:auto; 
+                                       margin-bottom:auto; 
+                                       width:400px; 
+                                       height:35px" 
+                                       type="text" id="search"
+                                       name="search"
+                                       placeholder="Search By City, Locality or Address"
+                                       autocomplete="off"
+                                       [(ngModel)]="locationText"
+                                       (keyup)="fetchLocations()" /><br/>
+                                <ul style="color:red;
+                                           font-size: 16px;
+                                           letter-spacing: 1px;
+                                           margin:250px;
+                                           margin-right:auto;
+                                           margin-left:-350px;
+                                           margin-top:auto;
+                                           margin-bottom:auto;
+                                           width:400px;
+                                           height:35px" id='searchResult'>
+                                    <li (click)="setLocation(location)" 
+                                        *ngFor="let location of Locations"> {{location}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <input style="color:white; font-size: 18px;letter-spacing: 1px; background-color:midnightblue; margin:250px; margin-left:auto; margin-top:auto; width:150px; height:40px"
+                                    type="submit" value="search" (click)="onSearch()" />
+                        </td>
+  
+                    </tr>
+                </table>
+            </div>
+        </header>
+    </section>
+  <!--  end hero section -->
+  
+  </div>
